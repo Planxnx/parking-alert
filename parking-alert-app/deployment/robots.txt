@@ -1,0 +1,3 @@
+User-Agent: *
+Allow: /
+Sitemap: https://parking-alert.planxnx.dev/sitemap.xml
