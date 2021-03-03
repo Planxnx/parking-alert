@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "parking-alerts",
+  "private_key_id": "f5e2a4ce35522cf224a8d52fd9a0cb17e51a26b1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCvasWFoAmokdWr\n+VrN7SJU4XxT9fDAp8N1k+bfRyR2xai+NHL+0klvILfIceYsikJF1/33dg1j5U/i\nvQSlaviwXoGfrd+1X1UZjiYTtGQ6gSSUx0B1Ykwo2vzA88xlgBg/L6T4q3WqhgbZ\nwhiuB1diL5svUngEKmJbnUc4KreSboOEisDIW2fE8zwkCwGCQqssj2291USdDWZ/\nygq5ov3kkEvcnLn0MxpMHS8hZxvj78SiHkhhnrVpQWGHQX2cBLCgdp5ZtrEv17f+\n1odfnilGPi/1kyNBVwdYjWfLXI5ZpkDMbcgEF8xZ63VnaCMEB5YCrEZzHQfvMFa9\niA8MhIHJAgMBAAECggEAATweQVVFIlg7J15vo/sLwIZ3nlVNB+DI1yDuAW292nLQ\nvhYHqF650QOsXX8KRXaIWmRClXLdLTUG4ITeFb6GlWdBU5isdkRz84EeEWmPw8dm\nFjJUGnXieYNzRxZqiSAU+IJkEXHqeLrVKTboXKw+d7WcHNQQLbaco2rKUN6D/id+\nxHMFqgQH/vdHDDwOaxwKpvuwQ3tKCTkESdUOfOZz9PZT7YWaC/0c/gHx4Lvxx+k7\nKkIc0+YTccD7bFlogWmZdhDXeC2rqSitR3gXU4LXnWmfaVZZTNjgJIp7LN6ikkP9\nUwSvUJBJCcPBCZyrMkyP7Tg5M/K2X6w1Oy/oi+iDKQKBgQD0SNhuWMWAxuV6Gvv0\nCEV2uPC+hF7Q2U0DC3n2Wm3FjpRTyGeVXb3XCY++GrbBiPwFvdu+uC4eZbxSh/Ce\nSk6u4wFRZI27ygBWYK/lOEqu+zGoZDuwAnxZk+HHETU8OFgn7V2SQHK5A8cC3Jr4\nYOhouht/xl5DpISxJwIwDaifSwKBgQC31GtluHA6kZjKVvoiVHbeZSLFe8TacZro\n8CVdca9aUaKw4vEOCgdlAj5k9HvoCv+OHJ1aYZzh+nzNbRsgo+kemTaZET/wiA7P\ngbH2AdBkooRYVysmzPGmkmZQoo4yVyzl7Hmr/GrCMZv+VOHal4c5WOn4ySZt5PVJ\nZVt/nwKyuwKBgQDjQfWfSpSKxf5sRzhIAX3mAg1toCW5M78yavXOmrfuh0M0YocC\n7Q+UQr/oAmAs0ixrhwIsfpnhC5JUUUUnbUef6W2rc9lrb3Q6534bx++qs+OxnXXt\nu5JFn472q+qTmHNiya84RR61Qm9dGTBOi5ELBMBacYf2c9JCIGEnpT1O2wKBgQCQ\nosVNZ2yF6IB60yxDTomoOZK+Jr+fz7q+hBQiDYyWV5zV5/kZvrJKuxU0gVfsHpsr\nyT/VGPBCrL79Mlchu1V0CcB3dqcELUjZ44WNtaetRmEy0ILXKHEJSi7OStfuq8Bb\nt0+UDipBWJ8P4OFDB+4RJPASGtHtrTOA6Aqxwv5weQKBgCAXgDyMQLeGkDaLMkVj\n235VH01WdPvNP0DGhC1lPeaBZCbvxivbcUr/vqtiNJ9dMH/GFgXupPEaVkhcB/cN\ne9i08pzjMvbIX0YP1pkPQT2+/ojvcH4T/+eI1fbtCPjEUDzgItAS5WmVUhhqeKcG\n3FIEelF6mwADQmEoQXWFwlSD\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-idb2c@parking-alerts.iam.gserviceaccount.com",
+  "client_id": "107454715916412300098",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-idb2c%40parking-alerts.iam.gserviceaccount.com"
+}
