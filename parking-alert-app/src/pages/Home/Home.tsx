@@ -7,12 +7,14 @@ const DivHome = styled.div`
   align-items: center;
 `;
 
-const Page404Container: React.FC = () => {
+const HomePage: React.FC = () => {
   return (
     <DivHome>
-      <h3>Parking Alert by <a href="planxnx.dev">Planxnx.dev</a></h3>
+      <h3>
+        Parking Alert by <a href="planxnx.dev">Planxnx.dev</a>
+      </h3>
     </DivHome>
-  )
+  );
 };
 
-export default Page404Container;
+export default HomePage;

@@ -1,6 +1,6 @@
-import CarContainer from "../containers/Car/Car";
-import HomeContainer from "../containers/Home/Home";
-import Page404Container from "../containers/404";
+import CarPage from "../pages/Car/Car";
+import HomePage from "../pages/Home/Home";
+import Page404Page from "../pages/404";
 import React from "react";
 
 export interface IRoutes {
@@ -15,18 +15,18 @@ export default [
     exactly: true,
     path: "/",
     name: "Home",
-    component: HomeContainer,
+    component: HomePage,
   },
   {
     exactly: true,
-    path: "/car/:carID",
+    path: "/:carID",
     name: "Car",
-    component: CarContainer,
+    component: CarPage,
   },
   {
     exactly: false,
     path: "*",
     name: "Page 404",
-    component: Page404Container,
+    component: Page404Page,
   },
 ] as IRoutes[];

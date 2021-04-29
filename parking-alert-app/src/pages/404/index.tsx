@@ -7,12 +7,12 @@ const Div404 = styled.div`
   align-items: center;
 `;
 
-const Page404Container: React.FC = () => {
+const Page404Page: React.FC = () => {
   return (
     <Div404>
-      <h1>Not found :(</h1>
+      <h1>404 Not found :(</h1>
     </Div404>
-  )
+  );
 };
 
-export default Page404Container;
+export default Page404Page;
