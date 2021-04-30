@@ -1,10 +1,10 @@
 module.exports = {
-  purge: [],
-  // purge: [
-  //   "./src/**/*.{js,jsx,ts,tsx}",
-  //   "./pages/**/*.{js,ts,jsx,tsx}",
-  //   "./public/index.html",
-  // ], //Tree Shake
+  // purge: [],
+  purge: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./public/index.html",
+  ], //Tree Shake
   // mode: "jit",
   darkMode: false, // or 'media' or 'class'
   theme: {
