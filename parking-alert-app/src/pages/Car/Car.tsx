@@ -7,6 +7,8 @@ import { ReactComponent as WebIcon } from "../../assets/icon.svg";
 import { ReactComponent as NotiIcon } from "../../assets/noti.svg";
 import Footer from "./component/Footer";
 import { ICarInfo } from "../../types/car";
+import LoadingScreen from "./component/Loading";
+import OverlayMessage from "./component/OverlayMessage";
 
 const cancelAxios = axios.CancelToken.source();
 
@@ -17,7 +19,6 @@ const CarPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [notiLimit, setNotiLimit] = useState(false);
-  const [apiStatus, setAPIStatus] = useState(true);
   const [notificationStatus, setNotificationStatus] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState("");
 
@@ -29,68 +30,72 @@ const CarPage: React.FC = () => {
         setCarInfo(carInfoResult);
         setLoading(false);
       } catch (error) {
+        setLoading(false);
         if (error.response?.status === 404) {
-          alert("ไม่เจอรถคันนี้");
-          setLoading(false);
           setNotFound(true);
           return;
         }
-        alert("ขออภัย, ไม่สามารถใช้งานได้ในขณะนี้");
         setIsError(true);
       }
     })();
-  }, []);
+  }, [carID]);
 
   const sendCarNoti = async () => {
     setLoading(true);
     try {
       await SendCarNoti(carID, notificationMessage, cancelAxios);
-      setNotificationStatus(true);
       setLoading(false);
+      setNotificationStatus(true);
     } catch (error) {
+      setLoading(false);
       if (error.response?.data?.code === "001") {
         setNotiLimit(true);
-        setLoading(false);
-        alert("มีการส่งคำขอไปแล้ว, โปรดส่งคำขอเลื่อนรถอีกครั้งภายหลัง");
         return;
       }
       cancelAxios.cancel();
-      setAPIStatus(false);
-      setLoading(false);
-      alert("ไม่สามารถส่งคำขอได้, โปรดส่งคำขอเลื่อนรถอีกครั้งภายหลัง");
+      setIsError(true);
     }
   };
 
-  if (loading) {
-    return (
-      <div>
-        <h1>Loading</h1>
-      </div>
-    );
-  }
-  if (notFound) {
-    return (
-      <div>
-        <h1>ไม่เจอรถทะเบียนนี้จ้า</h1>
-      </div>
-    );
-  }
-  if (isError) {
-    return (
-      <div>
-        <h1>ขออภัย ไม่สามารถใช้งานได้ :(</h1>
-      </div>
-    );
-  }
-  if (notificationStatus) {
-    return (
-      <div>
-        <h1>ส่งคำขอเรียบร้อยแล้ว</h1>
-      </div>
-    );
-  }
+  const StateOverlayMessage = () => {
+    if (loading) {
+      return <LoadingScreen />;
+    } else if (notificationStatus) {
+      return (
+        <OverlayMessage
+          title="Success✨"
+          subtitle="I'll comeback to you in a few mintues"
+        />
+      );
+    } else if (notiLimit) {
+      return (
+        <OverlayMessage
+          title="Enough!😡"
+          subtitle="Too much notification, Please try again later"
+        />
+      );
+    } else if (isError) {
+      return (
+        <OverlayMessage
+          code="500"
+          title="Aww! Error!"
+          subtitle="Unexpected error, Please try again later."
+        />
+      );
+    } else if (notFound) {
+      return (
+        <OverlayMessage
+          code="404"
+          title="Not Found!"
+          subtitle="It's look like you're lost"
+        />
+      );
+    }
+    return null;
+  };
   return (
     <div className="font-prompt h-screen bg-purple-700 ">
+      <StateOverlayMessage />
       <div className="w-screen h-1/6 text-white ">
         <div className="pt-3 px-3 flex">
           <WebIcon className="mr-2" />
@@ -124,15 +129,15 @@ const CarPage: React.FC = () => {
                   }}
                 ></textarea>
               </div>
-              <button
-                className="w-72	h-14 my-4 rounded-md justify-center bg-pinkyz text-white "
+              <a
+                className="w-72	h-14 my-4 rounded-md flex items-center justify-center bg-pinkyz text-white "
                 onClick={sendCarNoti}
               >
                 <div className="flex justify-center">
                   <NotiIcon className="mr-2 h-5" />
                   Send notification
                 </div>
-              </button>
+              </a>
             </div>
           </form>
         </div>
