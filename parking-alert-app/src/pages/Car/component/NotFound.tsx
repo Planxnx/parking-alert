@@ -6,7 +6,11 @@ const NotFoundScreen: React.FC = () => {
       <div className="absolute h-screen w-screen block z-20">
         <div className="h-screen w-screen flex items-center justify-center">
           <div className="animate-bounce rounded-xl bg-purple-600 p-10">
-            <p className="font-bold text-5xl text-white">NotFound!</p>
+            <p className="font-bold text-5xl text-white">
+              404
+              <br />
+              NotFound!
+            </p>
           </div>
         </div>
       </div>
