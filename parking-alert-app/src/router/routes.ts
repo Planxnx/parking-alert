@@ -1,6 +1,5 @@
 import CarPage from "../pages/Car/Car";
 import HomePage from "../pages/Home/Home";
-import Page404Page from "../pages/404";
 import React from "react";
 
 export interface IRoutes {
@@ -27,6 +26,6 @@ export default [
     exactly: false,
     path: "*",
     name: "Page 404",
-    component: Page404Page,
+    component: CarPage,
   },
 ] as IRoutes[];
