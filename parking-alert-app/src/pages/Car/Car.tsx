@@ -13,7 +13,7 @@ import OverlayMessage from "./component/OverlayMessage";
 const cancelAxios = axios.CancelToken.source();
 
 const CarPage: React.FC = () => {
-  const { carID } = useParams<{ carID: string }>();
+  let { carID } = useParams<{ carID: string }>();
   const [carInfo, setCarInfo] = useState<ICarInfo>();
   const [notFound, setNotFound] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -23,6 +23,9 @@ const CarPage: React.FC = () => {
   const [notificationMessage, setNotificationMessage] = useState("");
 
   useEffect(() => {
+    if (!carID) {
+      carID = "Not Found!";
+    }
     document.title = `${carID} | Planxnx.dev`;
     (async () => {
       try {
