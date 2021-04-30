@@ -1,25 +1,19 @@
 import React, { useEffect, useState } from "react";
-
 import axios from "axios";
-import styled from "styled-components";
 import { useParams } from "react-router-dom";
-import axiosInstance from "../../utils/axios";
 import { GetCartInfo, SendCarNoti } from "../../api/car";
-
+import { ReactComponent as CarLogo } from "../../assets/car.svg";
+import { ReactComponent as WebIcon } from "../../assets/icon.svg";
+import Footer from "./component/Footer";
 import { ICarInfo } from "../../types/car";
 
 const cancelAxios = axios.CancelToken.source();
 
-const DivCar = styled.div`
-  justify-content: center;
-  align-items: center;
-`;
-
 const SuccessCarNotiComponent: React.FC = () => {
   return (
-    <DivCar>
+    <div>
       <h1>ส่งคำขอเรียบร้อยแล้ว</h1>
-    </DivCar>
+    </div>
   );
 };
 
@@ -76,35 +70,75 @@ const CarPage: React.FC = () => {
 
   if (loading) {
     return (
-      <DivCar>
+      <div>
         <h1>Loading</h1>
-      </DivCar>
+      </div>
     );
   }
   if (notFound) {
     return (
-      <DivCar>
+      <div>
         <h1>ไม่เจอรถทะเบียนนี้จ้า</h1>
-      </DivCar>
+      </div>
     );
   }
   if (isError) {
     return (
-      <DivCar>
+      <div>
         <h1>ขออภัย ไม่สามารถใช้งานได้ :(</h1>
-      </DivCar>
+      </div>
     );
   }
   if (notificationStatus) {
     return <SuccessCarNotiComponent />;
   }
   return (
-    <DivCar>
-      <h2>{carInfo?.brand}</h2>
-      <h2>{carInfo?.plateNumber}</h2>
-      <h2>{carInfo?.plateCountry}</h2>
-      <button onClick={sendCarNoti}>ส่งคำขอเลื่อนรถ</button>
-    </DivCar>
+    <div className="font-prompt h-screen bg-purple-700 ">
+      <div className="w-screen h-1/6 text-white ">
+        <div className="pt-3 px-3 flex">
+          <WebIcon className="mr-2" />
+          <p className="text-lg font-medium">Parking Alert</p>
+        </div>
+        <div className="py-4 justify-items-center grid ">
+          <p className="text-xl font-semibold">
+            If you want to move the car,
+            <br /> Tell me!
+          </p>
+        </div>
+      </div>
+      <div className="w-screen h-5/6 py-7	px-9 rounded-t-mvp1 bg-white">
+        <div className="flex font-normal text-purple-700">
+          <p>{carInfo?.brand}</p>
+          <p>{carInfo?.plateNumber}</p>
+        </div>
+        <div className="justify-items-center grid">
+          <div className="py-5">
+            <CarLogo />
+          </div>
+          <form>
+            <div className="grid justify-items-center">
+              <div className="w-64">
+                <label className="text-pinkyz">Tell me ? (optional)</label>
+                <textarea
+                  className="w-64 h-40 p-3 rounded-lg border border-pinkyz focus:border-pinkyz resize-none text-purple-700"
+                  placeholder="Ex. ฉันมีธุรด่วน โปรดรีบกลับมา, โทรกลับหาฉัน 08x-xxxxxxx "
+                  onChange={(e) => {
+                    setNotificationMessage(e.target.value);
+                  }}
+                ></textarea>
+              </div>
+              <button
+                className="w-72	h-14 my-4 rounded-md justify-center bg-pinkyz text-white "
+                onClick={sendCarNoti}
+              >
+                Send notification
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <Footer />
+    </div>
   );
 };
 
