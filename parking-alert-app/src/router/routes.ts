@@ -1,5 +1,4 @@
 import CarPage from "../pages/Car/Car";
-import HomePage from "../pages/Home/Home";
 import React from "react";
 
 export interface IRoutes {
@@ -10,12 +9,6 @@ export interface IRoutes {
 }
 
 export default [
-  {
-    exactly: true,
-    path: "/",
-    name: "Home",
-    component: HomePage,
-  },
   {
     exactly: true,
     path: "/:carID",
