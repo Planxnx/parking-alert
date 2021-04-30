@@ -4,18 +4,11 @@ import { useParams } from "react-router-dom";
 import { GetCartInfo, SendCarNoti } from "../../api/car";
 import { ReactComponent as CarLogo } from "../../assets/car.svg";
 import { ReactComponent as WebIcon } from "../../assets/icon.svg";
+import { ReactComponent as NotiIcon } from "../../assets/noti.svg";
 import Footer from "./component/Footer";
 import { ICarInfo } from "../../types/car";
 
 const cancelAxios = axios.CancelToken.source();
-
-const SuccessCarNotiComponent: React.FC = () => {
-  return (
-    <div>
-      <h1>ส่งคำขอเรียบร้อยแล้ว</h1>
-    </div>
-  );
-};
 
 const CarPage: React.FC = () => {
   const { carID } = useParams<{ carID: string }>();
@@ -90,7 +83,11 @@ const CarPage: React.FC = () => {
     );
   }
   if (notificationStatus) {
-    return <SuccessCarNotiComponent />;
+    return (
+      <div>
+        <h1>ส่งคำขอเรียบร้อยแล้ว</h1>
+      </div>
+    );
   }
   return (
     <div className="font-prompt h-screen bg-purple-700 ">
@@ -108,7 +105,7 @@ const CarPage: React.FC = () => {
       </div>
       <div className="w-screen h-5/6 py-7	px-9 rounded-t-mvp1 bg-white">
         <div className="flex font-normal text-purple-700">
-          <p>{carInfo?.brand}</p>
+          <p>{carInfo?.brand}</p>&nbsp;&nbsp;&nbsp;&nbsp;
           <p>{carInfo?.plateNumber}</p>
         </div>
         <div className="justify-items-center grid">
@@ -131,7 +128,10 @@ const CarPage: React.FC = () => {
                 className="w-72	h-14 my-4 rounded-md justify-center bg-pinkyz text-white "
                 onClick={sendCarNoti}
               >
-                Send notification
+                <div className="flex justify-center">
+                  <NotiIcon className="mr-2 h-5" />
+                  Send notification
+                </div>
               </button>
             </div>
           </form>
