@@ -1,14 +1,7 @@
+import { RouterManagement } from "react-router-management";
 import CarPage from "../pages/Car/Car";
-import React from "react";
 
-export interface IRoutes {
-  exactly: boolean;
-  path: string;
-  name: string;
-  component: React.FC;
-}
-
-export default [
+const routes = [
   {
     exactly: true,
     path: "/:carID",
@@ -21,4 +14,8 @@ export default [
     name: "Page 404",
     component: CarPage,
   },
-] as IRoutes[];
+];
+
+export const RouterManagementViews = () => {
+  return RouterManagement({ routes });
+};
