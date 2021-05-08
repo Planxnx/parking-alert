@@ -4,7 +4,7 @@
 
 ### Website
 
-[Parking-Alert.Planxnx.dev](parking-alert.planxnx.dev)
+[Parking-Alert.Planxnx.dev](https://parking-alert.planxnx.dev)
 
 ### License
 
