@@ -2,6 +2,7 @@
   "name": "parking-alert-app",
   "version": "0.1.0",
   "private": true,
+  "author": "Thanee Charattrakool <planxthanee@gmail.com>",
   "dependencies": {
     "@craco/craco": "^6.1.2",
     "@testing-library/jest-dom": "^4.2.4",
