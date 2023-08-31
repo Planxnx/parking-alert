@@ -1,10 +1,12 @@
-# Parking-Alert
+# [WIP] Parking Alert
 
-> parking alert web application
+> parking alert web application.
 
-### Website
 
-[https://parking-alert.pages.dev/](https://parking-alert.pages.dev/)
+### Previews
+
+- [https://parking.planx.site](https://parking.planx.site/)
+- [https://parking.planxnx.dev](https://parking.planxnx.dev/)
 
 ### License
 
