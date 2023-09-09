@@ -1,0 +1,7 @@
+{
+  "name": "tsconfig",
+  "files": [
+    "base.json",
+    "react.json"
+  ]
+}

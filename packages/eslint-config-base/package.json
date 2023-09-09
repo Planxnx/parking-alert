@@ -1,0 +1,18 @@
+{
+	"name": "eslint-config-base",
+	"main": "index.js",
+	"dependencies": {
+		"eslint-config-prettier": "9.0.0",
+		"eslint-config-turbo": "1.10.12",
+		"eslint-plugin-autofix": "1.1.0",
+		"eslint-plugin-import": "2.28.1",
+		"eslint-plugin-prettier": "5.0.0",
+		"eslint-plugin-turbo": "1.10.12",
+		"eslint-plugin-unused-imports": "3.0.0",
+		"eslint-plugin-you-dont-need-lodash-underscore": "6.13.0",
+		"jsonc-eslint-parser": "2.3.0"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}
